@@ -17,7 +17,7 @@ constexpr double gradient_energy = 2.0;
 namespace GPU {
 
 /**
- * @brief User-defined operator evaulated at each quadrature point.
+ * @brief User-defined operator evaluated at each quadrature point.
  */
 template<unsigned int dim,
          unsigned int degree,

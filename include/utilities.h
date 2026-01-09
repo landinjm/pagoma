@@ -23,7 +23,7 @@ transfer_solution_between_memory_spaces(
 
   Assert(!(std::is_same_v<memory_space, memory_space_2>),
          dealii::ExcMessage("To transfer a vector between memory spaces, "
-                            "the two template paramters must belong to "
+                            "the two template parameters must belong to "
                             "different memory spaces."));
 
   dealii::LinearAlgebra::ReadWriteVector<number> rw_vector(locally_owned_dofs);

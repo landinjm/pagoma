@@ -15,22 +15,22 @@ taper = 0.4;
 For i In {0:num_layers}
   z = height * i / num_layers;
   scale = 1 - taper * (z / height);
-  
+
   // Create center point
   Point(100 + i*5 + 1) = {0, 0, z};
-  
+
   // Create points on major and minor axes
   Point(100 + i*5 + 2) = {under_major_axis * scale, 0, z};
   Point(100 + i*5 + 3) = {0, under_minor_axis * scale, z};
   Point(100 + i*5 + 4) = {-under_major_axis * scale, 0, z};
   Point(100 + i*5 + 5) = {0, -under_minor_axis * scale, z};
-  
+
   // Create ellipse arcs
   Ellipse(100 + i*4 + 1) = {100 + i*5 + 2, 100 + i*5 + 1, 100 + i*5 + 2, 100 + i*5 + 3};
   Ellipse(100 + i*4 + 2) = {100 + i*5 + 3, 100 + i*5 + 1, 100 + i*5 + 3, 100 + i*5 + 4};
   Ellipse(100 + i*4 + 3) = {100 + i*5 + 4, 100 + i*5 + 1, 100 + i*5 + 4, 100 + i*5 + 5};
   Ellipse(100 + i*4 + 4) = {100 + i*5 + 5, 100 + i*5 + 1, 100 + i*5 + 5, 100 + i*5 + 2};
-  
+
   // Create wire (curve loop)
   Wire(100 + i) = {100 + i*4 + 1, 100 + i*4 + 2, 100 + i*4 + 3, 100 + i*4 + 4};
 EndFor
@@ -54,7 +54,7 @@ Sphere(2) = {head_x, head_y, head_z, head_radius};
 
 // Create a box below z=0 to cut off the sphere
 box_size = 10;  // Large enough to contain the sphere
-Box(3) = {head_x - box_size, head_y - box_size, -box_size, 
+Box(3) = {head_x - box_size, head_y - box_size, -box_size,
           2*box_size, 2*box_size, box_size};  // From z=-box_size to z=0
 
 // Cut the sphere with the box (remove everything below z=0)

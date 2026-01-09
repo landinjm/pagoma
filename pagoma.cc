@@ -328,7 +328,7 @@ dispatch_number(const pagoma::Parameters& parameters)
       run_problem<dim, degree, double>(parameters);
       break;
     default:
-      throw std::runtime_error("Unsupport real number type");
+      throw std::runtime_error("Unsupported real number type");
   }
 }
 

@@ -6,11 +6,14 @@ cmake_install.cmake
 compile_commands.json
 **/.cache/*
 
+# Python virtual environments
+**/venv/*
+
 # Solution outputs
 *.vtu
 *.pvtu
 
-# Executable
+# Executables
 pagoma
 
 # Prerequisites
